@@ -19,4 +19,11 @@
             $json = "{\"Monumentos\" : {".$json_str."\n\n}}";
             echo $json;
         }
+
+        function audioDescricao ($id) {
+            $result = $this->monumentos->audioDescricao($id);
+            foreach ($result as $r) {
+                return "data:audio/mpeg;base64,".base64_encode($r['audioDescricao']);
+            }
+        }
     }
