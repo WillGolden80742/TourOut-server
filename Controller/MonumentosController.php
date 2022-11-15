@@ -10,10 +10,13 @@
 
         function listadeMonumentos () {
             $result = $this->monumentos->listadeMonumentos();
+            $json = array();
             $json_str = "";
             foreach ($result as $r) {
-                $json_str.="".$r['nome'].",";
+                $json_str.="\n\n\"".$r['nome']."\": {\"idMonumento\" : ".$r['idMonumento'].", \"latitude\" : ".$r['latitude'].",\"longitude\" : ".$r['longitude']."},\n";
             }
-            echo $json_str;
+            $json_str = rtrim($json_str,",\n");
+            $json = "{\"Monumentos\" : {".$json_str."\n\n}}";
+            echo $json;
         }
     }
