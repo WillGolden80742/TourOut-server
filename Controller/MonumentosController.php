@@ -23,7 +23,20 @@
         function audioDescricao ($id) {
             $result = $this->monumentos->audioDescricao($id);
             foreach ($result as $r) {
-                return $r['audioDescricao'];
+                $audioDescricao = $r['audioDescricao'];
             }
+            if (isset($audioDescricao)) {
+                return $audioDescricao;
+            } else {
+                return $this->arquivoNaoEncontrado();
+            }
+    
+        }
+
+        function arquivoNaoEncontrado () {
+            $result = $this->monumentos->arquivoNaoEncontrado();
+            foreach ($result as $r) {
+                return $r['arquivo'];
+            }  
         }
     }

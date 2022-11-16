@@ -21,4 +21,11 @@
             $query->bindParam(':id',$id, PDO::PARAM_STR);
             return $connection->execute($query)->fetchAll();
         }
+
+        function arquivoNaoEncontrado () {
+            // Recomendado uso de prepare statement 
+            $connection = $this->conFactoryPDO;
+            $query = $connection->query("SELECT arquivo FROM MensagensAoUsuario WHERE idMensagem = '1'");
+            return $connection->execute($query)->fetchAll();
+        }
     }
