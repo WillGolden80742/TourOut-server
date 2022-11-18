@@ -10,7 +10,7 @@
         function listadeMonumentos () {
             // Recomendado uso de prepare statement 
             $connection = $this->conFactoryPDO;
-            $query = $connection->query("SELECT idMonumento, nome, latitude, longitude FROM Monumento");
+            $query = $connection->query("SELECT idMonumento, nome, latitude, longitude, descricao FROM Monumento");
             return $connection->execute($query)->fetchAll();
         }
 
