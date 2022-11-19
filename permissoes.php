@@ -4,4 +4,4 @@
 
     $monumentos = new MonumentosController();
 
-    $monumentos->permissoesNecessarias();
+    echo $monumentos->permissoesNecessarias();
