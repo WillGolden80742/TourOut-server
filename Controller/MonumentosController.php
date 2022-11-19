@@ -20,6 +20,18 @@
             echo $json;
         }
 
+        function listadeMonumentosByNome ($nome) {
+            $result = $this->monumentos->listadeMonumentosByNome($nome);
+            $json = array();
+            $json_str = "";
+            foreach ($result as $r) {
+                $json_str.="\n\n\"".$r['nome']."\": {\"idMonumento\" : ".$r['idMonumento'].", \"latitude\" : ".$r['latitude'].",\"longitude\" : ".$r['longitude'].", \"descricao\" : \"".$r['descricao']."\"},\n";
+            }
+            $json_str = rtrim($json_str,",\n");
+            $json = "{\"Monumentos\" : {".$json_str."\n\n}}";
+            echo $json;
+        }
+
         function audioDescricao ($id) {
             $result = $this->monumentos->audioDescricao($id);
             foreach ($result as $r) {

@@ -4,4 +4,8 @@
 
     $monumentos = new MonumentosController();
 
-    $monumentos->listadeMonumentos();
+    if (isset($_GET['nome']) ) {
+        $monumentos->listadeMonumentosByNome($_GET['nome']);
+    } else {
+        $monumentos->listadeMonumentos();
+    }

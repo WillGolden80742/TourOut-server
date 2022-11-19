@@ -6,6 +6,4 @@
 
     if (isset($_GET['idDocumento'])) {
         echo $monumentos -> audioDescricao($_GET['idDocumento']);
-    } else if (isset($_GET['lat']) && isset($_GET['long']) ) {
-        echo $_GET['lat']." ".$_GET['long'];
     }

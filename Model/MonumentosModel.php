@@ -14,6 +14,14 @@
             return $connection->execute($query)->fetchAll();
         }
 
+        function listadeMonumentosByNome ($nome) {
+            // Recomendado uso de prepare statement 
+            $connection = $this->conFactoryPDO;
+            $query = $connection->query("SELECT idMonumento, nome, latitude, longitude, descricao FROM Monumento WHERE nome like CONCAT('%', :nome, '%') ");
+            $query->bindParam(':nome',$nome, PDO::PARAM_STR);
+            return $connection->execute($query)->fetchAll();
+        }
+
         function audioDescricao ($id) {
             // Recomendado uso de prepare statement 
             $connection = $this->conFactoryPDO;
