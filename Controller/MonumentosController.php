@@ -51,4 +51,11 @@
                 return $r['arquivo'];
             }  
         }
+
+        function permissoesNecessarias () {
+            $result = $this->monumentos->permissoesNecessarias();
+            foreach ($result as $r) {
+                return $r['arquivo'];
+            }  
+        }
     }
