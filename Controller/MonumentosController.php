@@ -58,4 +58,11 @@
                 return $r['arquivo'];
             }  
         }
+
+        function baixandoDados ($status) {
+            $result = $this->monumentos->baixandoDados($status);
+            foreach ($result as $r) {
+                return $r['arquivo'];
+            }  
+        }
     }

@@ -43,4 +43,17 @@
             $query = $connection->query("SELECT arquivo FROM MensagensAoUsuario WHERE idMensagem = '2'");
             return $connection->execute($query)->fetchAll();
         }
+
+        function baixandoDados ($status) {
+            // Recomendado uso de prepare statement 
+            if ($status == "0") {
+                $connection = $this->conFactoryPDO;
+                $query = $connection->query("SELECT arquivo FROM MensagensAoUsuario WHERE idMensagem = '3'");
+                return $connection->execute($query)->fetchAll();
+            } else if ($status == "1") {
+                $connection = $this->conFactoryPDO;
+                $query = $connection->query("SELECT arquivo FROM MensagensAoUsuario WHERE idMensagem = '4'");
+                return $connection->execute($query)->fetchAll();
+            }
+        }
     }
