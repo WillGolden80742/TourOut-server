@@ -30,6 +30,15 @@
             return $connection->execute($query)->fetchAll();
         }
 
+        function audioDescricaoNome ($id) {
+            // Recomendado uso de prepare statement 
+            $connection = $this->conFactoryPDO;
+            $query = $connection->query("SELECT nomeAudioDescritto FROM Monumento WHERE idMonumento = :id");
+            $query->bindParam(':id',$id, PDO::PARAM_STR);
+            return $connection->execute($query)->fetchAll();
+        }
+
+
         function arquivoNaoEncontrado () {
             // Recomendado uso de prepare statement 
             $connection = $this->conFactoryPDO;
