@@ -5,5 +5,5 @@
     $monumentos = new MonumentosController();
 
     if (isset($_GET['idDocumento'])) {
-        echo $monumentos -> audioDescricao($_GET['idDocumento']);
+        echo $monumentos -> audioDescricaoNome($_GET['idDocumento']);
     }
