@@ -1,55 +1,55 @@
-# Servidor do Aplicativo Guia Turístico para Deficientes Visuais
+# Tourist Guide App Server for Visually Impaired
 
-Este repositório contém o código do servidor PHP responsável por fornecer os dados do aplicativo "Guia Turístico para Deficientes Visuais".
+This repository contains the PHP server code responsible for providing data for the "Tourist Guide for Visually Impaired" mobile application.
 
-## Sobre o Servidor
+## About the Server
 
-O servidor foi desenvolvido em PHP e provê uma API REST para o aplicativo mobile se comunicar e obter os dados necessários sobre pontos turísticos. 
+The server is developed in PHP and provides a REST API for the mobile application to communicate and obtain necessary data about tourist attractions.
 
-Ele faz interface com um banco de dados MySQL que armazena informações como:
+It interfaces with a MySQL database that stores information such as:
 
-- Nome e ID dos pontos turísticos
-- Coordenadas geográficas (latitude e longitude)
-- Descrições em texto e áudio
+- Name and ID of tourist attractions
+- Geographical coordinates (latitude and longitude)
+- Text and audio descriptions
 
-## Funcionalidades
+## Features
 
-As principais funcionalidades providas são:
+The main provided functionalities include:
 
-- Busca textual de pontos turísticos por nome
-- Busca de descrição e áudio por ID do ponto turístico
-- Retorno de mensagens customizadas em caso de erro ou necessidade de permissão
+- Textual search for tourist attractions by name
+- Retrieval of description and audio by tourist attraction ID
+- Customized error messages or permission requests
 
-## Tecnologias Utilizadas
+## Technologies Used
 
-- Linguagem PHP com orientação a objetos
+- PHP language with object-oriented programming
 - MySQL
-- Padrão MVC com Models, Views e Controllers
-- JSON para serialização e retorno das respostas
+- MVC pattern with Models, Views, and Controllers
+- JSON for serialization and response returns
 
-## Configuração
+## Configuration
 
-- Importe o banco de dados MySQL disponibilizado
-- Configure os parâmetros de conexão no arquivo ConnectionFactory
-- Certifique-se que a pasta de áudios referenciada existe
+- Import the provided MySQL database
+- Configure connection parameters in the ConnectionFactory file
+- Ensure that the referenced audio folder exists
 
-## Utilização
+## Usage
 
-A API pode ser consumida via requisições HTTP GET passando os parâmetros necessários.
+The API can be consumed through HTTP GET requests with the necessary parameters.
 
-Exemplos:
+Examples:
 
 ```
-//Busca texto por nome 
-http://servidor/monumentos.php?nome=museu
+// Search text by name
+http://server/monuments.php?name=museum
 
-//Busca descrição por ID
-http://servidor/audioDescricao.php?idDocumento=35
+// Search description by ID
+http://server/audioDescription.php?idDocument=35
 
-//Busca áudio da descrição por ID 
-http://servidor/audioDescricaoNome.php?idDocumento=35
+// Search audio description by ID
+http://server/audioDescriptionName.php?idDocument=35
 ```
 
-## Licença
+## License
 
 [MIT](https://choosealicense.com/licenses/mit/)
