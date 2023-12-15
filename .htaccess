@@ -2,3 +2,24 @@
     Order allow,deny
     Deny from all
 </FilesMatch>
+
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /TourOut/  # Substitua "seu-diretorio" pelo caminho relativo do seu projeto
+
+    # Reescrever a URL para audioDescricao.php
+    RewriteRule ^audio-descricao/([0-9]+)$ audioDescricao.php?idDocumento=$1 [QSA,L]
+
+    # Reescrever a URL para audioDescricaoNome.php
+    RewriteRule ^audio-nome/([0-9]+)$ audioDescricaoNome.php?idDocumento=$1 [QSA,L]
+
+    # Reescrever a URL para baixandodados.php
+    RewriteRule ^baixar-dados/(.*)$ baixandodados.php?status=$1 [QSA,L]
+
+    # Reescrever a URL para monumentos.php
+    RewriteRule ^monumentos/(.*)$ monumentos.php?nome=$1 [QSA,L]
+
+    # Reescrever a URL para permissoes.php
+    RewriteRule ^permissoes$ permissoes.php [QSA,L]
+</IfModule>
