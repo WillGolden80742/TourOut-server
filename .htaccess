@@ -12,7 +12,7 @@
     RewriteRule ^audio-descricao/([0-9]+)$ audioDescricao.php?idDocumento=$1 [QSA,L]
 
     # Reescrever a URL para audioDescricaoNome.php
-    RewriteRule ^audio-nome/([0-9]+)$ audioDescricaoNome.php?idDocumento=$1 [QSA,L]
+    RewriteRule ^audio-descricao-nome/([0-9]+)$ audioDescricaoNome.php?idDocumento=$1 [QSA,L]
 
     # Reescrever a URL para baixandodados.php
     RewriteRule ^baixar-dados/(.*)$ baixandodados.php?status=$1 [QSA,L]
